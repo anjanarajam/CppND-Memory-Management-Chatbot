@@ -17,6 +17,7 @@ ChatBot::ChatBot()
     _rootNode = nullptr;
 }
 
+
 // constructor WITH memory allocation
 ChatBot::ChatBot(std::string filename)
 {
@@ -29,6 +30,37 @@ ChatBot::ChatBot(std::string filename)
     // load image into heap memory
     _image = new wxBitmap(filename, wxBITMAP_TYPE_PNG);
 }
+
+//// STUDENT CODE
+////
+
+/* Copy Constructor */
+ChatBot::ChatBot(const ChatBot& obj) {
+  std::cout << "Chatbot:Performing deep copy constructor" << std::endl;
+  
+  _rootNode = obj._rootNode;
+  _chatLogic = obj._chatLogic;
+  
+  _image = new wxBitmap(*(obj._image));        
+  _image = obj._image;        
+}
+
+/* Move Constructor */
+ChatBot::ChatBot(ChatBot&& obj) {
+  std::cout << "Chatbot:Move constructor" << std::endl;
+  
+  _rootNode = obj._rootNode;
+  _chatLogic = obj._chatLogic;
+  _image = obj._image;
+  
+  obj._rootNode = nullptr;
+  obj._chatLogic = nullptr;
+  obj._image = nullptr;
+;
+}
+
+////
+//// EOF STUDENT CODE
 
 ChatBot::~ChatBot()
 {
