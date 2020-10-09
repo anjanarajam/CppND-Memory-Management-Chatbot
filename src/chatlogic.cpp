@@ -227,16 +227,16 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
         }
     }
 
-    /* Create a local member of chatbot */
-    ChatBot* chatBot =  new ChatBot("../images/chatbot.png");
+    /* Create a local member of chatbot - which means memory in stack not dynamically allocated memory */
+    ChatBot chatBot =  ChatBot("../images/chatbot.png");
     /* Pass chat bot to chat logic */
-    SetChatbotHandle(chatBot); 
+    SetChatbotHandle(&chatBot); 
     /* Pass chatbot to chatlogic so that it can display messages in GUI */
-    chatBot->SetChatLogicHandle(this);
+    chatBot.SetChatLogicHandle(this);
     /* |Set the root node in chatbot */
-    chatBot->SetRootNode(rootNode);
+    chatBot.SetRootNode(rootNode);
   	/* Move chatbot to the rootnode */
-    rootNode->MoveChatbotHere(std::move(chatBot));
+    rootNode->MoveChatbotHere(std::move(&chatBot));
     
     ////
     //// EOF STUDENT CODE
