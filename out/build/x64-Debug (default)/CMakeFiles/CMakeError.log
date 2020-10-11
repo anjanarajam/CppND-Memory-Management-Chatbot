@@ -1,0 +1,26 @@
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/bin/Hostx64/x64/cl.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+Microsoft (R) C/C++ Optimizing Compiler Version 19.27.29111 for x64
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+CMakeCCompilerId.c
+C:\Users\anjan\Downloads\GIT\MEMORY CHATBOT\CppND-Memory-Management-Chatbot\out\build\x64-Debug (default)\CMakeFiles\3.17.20032601-MSVC_2\CompilerIdC\CMakeCCompilerId.c : fatal error C1083: Cannot open compiler generated file: 'C:\Users\anjan\Downloads\GIT\MEMORY CHATBOT\CppND-Memory-Management-Chatbot\out\build\x64-Debug (default)\CMakeFiles\3.17.20032601-MSVC_2\CompilerIdC\CMakeCCompilerId.obj': Permission denied
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" did not produce an executable in "C:/Users/anjan/Downloads/GIT/MEMORY CHATBOT/CppND-Memory-Management-Chatbot/out/build/x64-Debug (default)/CMakeFiles/3.17.20032601-MSVC_2/CompilerIdC".
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: C:/Users/anjan/Downloads/GIT/MEMORY CHATBOT/CppND-Memory-Management-Chatbot/out/build/x64-Debug (default)/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_0fadd && ninja: error: build.ninja:35: loading 'rules.ninja': The system cannot find the file specified.
+
+include rules.ninja
+                   ^ near here
+
+
+

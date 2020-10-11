@@ -12,12 +12,12 @@ class ChatBot
 {
 private:
     // data handles (owned)
-    wxBitmap *_image; // avatar image
+    wxBitmap* _image; // avatar image
 
     // data handles (not owned)
-    GraphNode *_currentNode;
-    GraphNode *_rootNode;
-    ChatLogic *_chatLogic;
+    GraphNode* _currentNode;
+    GraphNode* _rootNode;
+    ChatLogic* _chatLogic;
 
     // proprietary functions
     int ComputeLevenshteinDistance(std::string s1, std::string s2);
@@ -32,57 +32,57 @@ public:
     ////
     /* Copy Constructor */
     ChatBot(const ChatBot& obj);
-    
+
     /* Copy Assisgnment operator */
     ChatBot& operator=(const ChatBot& obj) {
-    	std::cout << "Chatbot:Performing deep copy assignment operator" << std::endl;
-        
-        if (this == &obj) 
-        	return *this;
-            
+        std::cout << "Chatbot:Performing deep copy assignment operator" << std::endl;
+
+        if (this == &obj)
+            return *this;
+
         _rootNode = obj._rootNode;
         _chatLogic = obj._chatLogic;
-            
+
         delete _image;
-        
-        _image = new wxBitmap(*(obj._image));  
+
+        _image = new wxBitmap(*(obj._image));
         _image = obj._image;
-        
-        return *this;       
+
+        return *this;
     }
-    
+
     /* Move Constructor */
     ChatBot(ChatBot&& obj);
-    
-     /* Move Assignment operator */
-	ChatBot& operator=(ChatBot&& obj) {
-    	std::cout << "Chatbot:Move assignment operator" << std::endl;
-        
-        if (this == &obj) 
-        	return *this;
-            
+
+    /* Move Assignment operator */
+    ChatBot& operator=(ChatBot&& obj) {
+        std::cout << "Chatbot:Move assignment operator" << std::endl;
+
+        if (this == &obj)
+            return *this;
+
         _rootNode = obj._rootNode;
         _chatLogic = obj._chatLogic;
-            
+
         delete _image;
-        
-    	_image = obj._image;
-        
-    	obj._image = nullptr;
+
+        _image = obj._image;
+
+        obj._image = nullptr;
         _rootNode = nullptr;
         _chatLogic = nullptr;
-        
-        return *this; 
-	}
+
+        return *this;
+    }
 
     ////
     //// EOF STUDENT CODE
 
     // getters / setters
-    void SetCurrentNode(GraphNode *node);
-    void SetRootNode(GraphNode *rootNode) { _rootNode = rootNode; }
-    void SetChatLogicHandle(ChatLogic *chatLogic) { _chatLogic = chatLogic; }
-    wxBitmap *GetImageHandle() { return _image; }
+    void SetCurrentNode(GraphNode* node);
+    void SetRootNode(GraphNode* rootNode) { _rootNode = rootNode; }
+    void SetChatLogicHandle(ChatLogic* chatLogic) { _chatLogic = chatLogic; }
+    wxBitmap* GetImageHandle() { return _image; }
 
     // communication
     void ReceiveMessageFromUser(std::string message);
