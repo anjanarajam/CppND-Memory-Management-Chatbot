@@ -94,7 +94,6 @@ ChatBot& ChatBot::operator=(ChatBot&& obj) {
 
     delete _image;
 
-    _image = new wxBitmap();
     *_image = *obj._image;
 
     obj._image = nullptr;
