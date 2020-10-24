@@ -94,7 +94,7 @@ ChatBot& ChatBot::operator=(ChatBot&& obj) {
 
     delete _image;
 
-    *_image = *obj._image;
+    _image = obj._image;
 
     obj._image = nullptr;
     obj._rootNode = nullptr;
