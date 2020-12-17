@@ -33,7 +33,7 @@ public:
     //// STUDENT CODE
     ////
     /* Unique pointers cannot be copied because only one object can have access to a particular location */
-    std::unique_ptr<ChatLogic> GetChatLogicHandle() { return std::move(_chatLogic); }
+    ChatLogic* GetChatLogicHandle() { return _chatLogic.get(); }
     
     ////
     //// EOF STUDENT CODE
