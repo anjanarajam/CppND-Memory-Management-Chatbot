@@ -40,7 +40,6 @@ ChatBot::ChatBot(const ChatBot& obj) {
 
     _rootNode = obj._rootNode;
     _chatLogic = obj._chatLogic;
-    //_chatLogic->SetChatbotHandle(this);
 
     /* Perform deep copy */
     _image = new wxBitmap();
@@ -56,8 +55,7 @@ ChatBot& ChatBot::operator=(const ChatBot& obj) {
 
     _rootNode = obj._rootNode;
     _chatLogic = obj._chatLogic;
-    _chatLogic->SetChatbotHandle(this);
-
+ 
      /* Perform deep copy */
     _image = new wxBitmap();
     *_image = *obj._image;
@@ -72,7 +70,6 @@ ChatBot::ChatBot(ChatBot&& obj) {
     _rootNode = obj._rootNode;
     _chatLogic = obj._chatLogic;
     _image = obj._image;
-    _chatLogic->SetChatbotHandle(this);
 
     obj._rootNode = nullptr;
     obj._chatLogic = nullptr;
@@ -88,8 +85,6 @@ ChatBot& ChatBot::operator=(ChatBot&& obj) {
 
     _rootNode = obj._rootNode;
     _chatLogic = obj._chatLogic;
-    _chatLogic->SetChatbotHandle(this);
-
     _image = obj._image;
 
     obj._image = nullptr;
